@@ -9,9 +9,10 @@ export default {
   }
 }
 </script>
-
-<template>
   
+<template>
+  <appHeader />
+  <appMain />
 </template>
 
 <style lang="scss">

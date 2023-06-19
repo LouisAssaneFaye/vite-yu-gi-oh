@@ -1,15 +1,12 @@
 <template>
-    <main>
-
-    </main>
+   
 </template>
 <script>
 export default {
-    name: 'appMain',
-    data(){
-
+    name: 'singleCard',
+    props:{
+        cardElement: Object,
     }
-    
 }
 </script>
 <style lang="scss" scoped>

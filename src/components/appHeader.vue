@@ -1,13 +1,18 @@
 <template>
     <header>
-
+        <cards />
+        
     </header>
 </template>
 <script>
+import cards from './cards.vue';
 export default {
-    name: 'header',
+    name: 'appHeader',
     data(){
         
+    },
+    components: {
+        cards
     }
     
 }
