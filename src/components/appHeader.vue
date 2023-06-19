@@ -1,18 +1,16 @@
 <template>
     <header>
-        <cards />
-        
+        <span>
+            YU-Gi-Oh Api
+        </span>
+
     </header>
 </template>
 <script>
-import cards from './cards.vue';
 export default {
     name: 'appHeader',
     data(){
-        
-    },
-    components: {
-        cards
+
     }
     
 }
@@ -20,5 +18,16 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 @use '../styles/partials/variables' as *;
+header{
+    height: 70px;
+    span{
+        display: flex;
+        height: 100%;
+        font-size: 2rem;
+        align-items: center;
+        margin-left: 5rem;
+
+    }
+}
     
 </style>
