@@ -3,8 +3,8 @@
         
         <div class="main-up">
             <select name="languages" id="lang">
-                <option value="Allen">Allen</option>
-                <option value="Other_player">Other_player</option>
+                <option value="Allen">Alien</option>
+                <option value="Other">Other</option>
             </select>
         </div>
 
@@ -45,7 +45,6 @@ export default {
 @use '../styles/partials/mixins' as *;
 @use '../styles/partials/variables' as *;
 main{
-    height: calc(100vh - 70px);
     background-color: $orangeColor;
     div.main-up{
         height: 70px;
@@ -61,19 +60,13 @@ main{
     }
 
     div.main-down{
-        border: 1px solid black;
-        height: calc(100% - 70px);
         div.first-container{
-            height: 100%;
             width: 86%;
-            border: 1px solid black;
             margin: 0 auto;
             background-color: $whiteColor;
             padding-top: 55px;
             div.second-container{
                 width: 94%;
-                height: 100%;
-                border: 1px solid black;
                 margin: 0 auto;
                 div.second-container-up{
                     display: flex;
@@ -85,7 +78,7 @@ main{
                     padding-left: 1rem;
                 }
                 div.second-container-down{
-                    height: calc(100% - 50px);
+                    @include flex();
                     
                 }
                 
