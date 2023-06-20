@@ -2,10 +2,7 @@
     <main>
         
         <div class="main-up">
-            <select name="languages" id="lang">
-                <option value="Allen">Alien</option>
-                <option value="Other">Other</option>
-            </select>
+            <selectMain />
         </div>
 
         <div class="main-down">
@@ -17,7 +14,7 @@
                         </span>
                     </div>
                     <div class="second-container-down">
-                        <cards />
+                        <cards :cardList="cardList" />
                     </div>
 
                 </div>
@@ -30,14 +27,32 @@
 </template>
 <script>
 import cards from './cards.vue';
+import selectMain from './selectMain.vue';
+import axios from 'axios';
 export default {
     name: 'appMain',
     data(){
+        return{
+            cardList:[],
+        }
         
     },
     components: {
-        cards
-    }
+        cards,
+        selectMain,
+    },
+    created(){
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        .then( (response) => {
+        console.log(response);
+        this.cardList = response.data.data;
+        })
+        .catch(function (error) {
+        // handle error
+        console.log(error);
+        })
+
+    },
     
 }
 </script>
@@ -51,12 +66,7 @@ main{
         border: 1px solid black;
         display: flex;
         align-items: center;
-        select{
-            height: 2rem;
-            width: 9rem;
-            margin-left: 6rem;
-
-        }
+        
     }
 
     div.main-down{

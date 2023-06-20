@@ -9,33 +9,18 @@
 
 <script>
 import singleCard from './singleCard.vue';
-import axios from 'axios';
 export default {
     name: 'cards',
     data(){
         return{
-            cardList: [
-               
-                
-                
-            ]
 
         }
     },
     components:{
         singleCard
     },
-    created(){
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-        .then( (response) => {
-        console.log(response);
-        this.cardList = response.data.data;
-        })
-        .catch(function (error) {
-        // handle error
-        console.log(error);
-        })
-
+    props:{
+        cardList: Array
     },
     
 }
