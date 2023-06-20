@@ -29,7 +29,7 @@
 import cards from './cards.vue';
 import selectMain from './selectMain.vue';
 import axios from 'axios';
-export default {
+export default { 
     name: 'appMain',
     data(){
         return{
