@@ -2,7 +2,7 @@
     <main>
         
         <div class="main-up">
-            <selectMain />
+            <selectMain :cardList="cardList" />
         </div>
 
         <div class="main-down">

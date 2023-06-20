@@ -1,12 +1,17 @@
 <template>
    <select name="languages" id="lang">
-                <option value="Allen">Allen</option>
-                <option value="Other_player">Other_player</option>
+                <option v-for="cardObj in cardList" value="">
+                    {{ cardObj.archetype }}
+                </option>
+                
     </select>
 </template>
 <script>
 export default {
     name: 'selectMain',
+    props:{
+        cardList: Array,
+    },
     data() {
         return{
            
