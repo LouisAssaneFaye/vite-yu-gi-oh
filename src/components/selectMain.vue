@@ -1,5 +1,5 @@
 <template>
-   <select v-model="selected" name="languages" id="lang">
+   <select v-model = "selected" name="languages" id="lang">
                 <option v-for="cardObj in cardList" value="" @click="$emit('searched',selected)">
                     {{ cardObj.archetype }}
                 </option>

@@ -43,7 +43,7 @@ export default {
         selectMain,
     },
     methods:{
-        searchCharacters(needle){
+        searchCharacters(needle=''){
             axios.get(`${this.apiUrl}/?archetype=${needle}`)
             .then( (response) => {
             console.log(response);
