@@ -2,7 +2,7 @@
     <main>
         
         <div class="main-up">
-            <selectMain :cardList="cardList" />
+            <selectMain :cardList="cardList" @searched="searchCharacters" />
         </div>
 
         <div class="main-down">
@@ -34,6 +34,7 @@ export default {
     data(){
         return{
             cardList:[],
+            apiUrl : 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
         }
         
     },
@@ -41,17 +42,22 @@ export default {
         cards,
         selectMain,
     },
-    created(){
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-        .then( (response) => {
-        console.log(response);
-        this.cardList = response.data.data;
-        })
-        .catch(function (error) {
-        // handle error
-        console.log(error);
-        })
+    methods:{
+        searchCharacters(needle){
+            axios.get(`${this.apiUrl}'/?archetype='${needle}`)
+            .then( (response) => {
+            console.log(response);
+            this.cardList = response.data.data;
+            })
+            .catch(function (error) {
+            // handle error
+            console.log(error);
+            })
+        }
 
+    },
+    created(){
+       this.searchCharacters();
     },
     
 }
