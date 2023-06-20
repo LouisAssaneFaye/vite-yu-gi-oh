@@ -1,6 +1,6 @@
 <template>
    <select name="languages" id="lang">
-                <option v-for="cardObj in cardList" value="">
+                <option v-for="cardObj in cardList" value="" @click="logContent()">
                     {{ cardObj.archetype }}
                 </option>
                 
@@ -18,6 +18,11 @@ export default {
 
         }
     },
+    methods:{
+        logContent(){
+            console.log('ciao');
+        }
+    }
     
 }
 </script>
