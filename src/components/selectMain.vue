@@ -20,9 +20,7 @@ export default {
         }
     },
     methods:{
-        logContent(){
-            console.log('ciao');
-        }
+        
     }
     
 }

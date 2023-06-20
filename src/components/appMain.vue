@@ -44,7 +44,7 @@ export default {
     },
     methods:{
         searchCharacters(needle){
-            axios.get(`${this.apiUrl}'/?archetype='${needle}`)
+            axios.get(`${this.apiUrl}/?archetype=${needle}`)
             .then( (response) => {
             console.log(response);
             this.cardList = response.data.data;
